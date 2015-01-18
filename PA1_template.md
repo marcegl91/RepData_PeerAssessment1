@@ -64,6 +64,9 @@ The amount of missing values in the data is **2304**.
 
 ### New dataset with missing data filled in
 
+The strategy to fill the missing data is to use the average of steps of each day of each interval.
+
+
 ```r
 newData <- data
 newData$avg <- rep(avgData$x,61)
@@ -101,6 +104,7 @@ library(lubridate)
 newData$typeDay <- ifelse(wday(newData$date) == 1 | wday(newData$date) == 7,"weekend","weekday")
 newData$typeDay <- factor(newData$typeDay)
 ```
+
 
 
 ```r

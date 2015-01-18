@@ -254,6 +254,8 @@ medianData &lt;- median(sumData$x, na.rm = TRUE)
 
 <h3>New dataset with missing data filled in</h3>
 
+<p>The strategy to fill the missing data is to use the average of steps of each day of each interval.</p>
+
 <pre><code class="r">newData &lt;- data
 newData$avg &lt;- rep(avgData$x,61)
 newData$steps[is.na(newData$steps)] &lt;- newData$avg[is.na(newData$steps)]
